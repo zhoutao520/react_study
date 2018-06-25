@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>helloWorld</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <div id="app"></div>
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="http://cdn.bootcss.com/babel-core/5.8.38/browser.min.js"></script>
+    <script type="text/babel">
+        class HelloComponent  extends React.Component{
+            render(){
+                return (
+                    <h1>hello{this.props.name == 'zhoutao'?this.props.name:'World'} !</h1>
+                )
+            }
+        }
+        // const helloworld = <h1>hello World!</h1>;
+        ReactDOM.render(
+            <HelloComponent name="zhoutao"/>,
+            document.getElementById('app')
+        )
+    </script>
+</body>
+</html>

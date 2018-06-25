@@ -1,0 +1,32 @@
+var path =require('path');
+module.exports = {
+    //入口文件
+    entry:'./app/index.js',
+    //出口文件
+    output:{
+        filename:'index.js',
+        path:path.resolve(__dirname,'dist'),
+        publicPath:'temp/'
+    },
+    devServer:{
+        contentBase:'./',
+        host:'192.168.0.108',
+        compress:true,
+        port:1717
+    },
+    module:{
+        rules:[
+            {
+                test:/\.js$/,
+                exclude:/node_modules/,
+                loader:"babel-loader",
+                options:{
+                    presets:['es2015','react']
+                }
+            },{
+                test:/\.css$/,
+                loader:['style-loader','css-loader']
+            }
+        ]
+    }
+}
